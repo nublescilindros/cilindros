@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  gap: 0.5rem;
+  border: solid 0.05rem rgb(214, 210, 210);
+  padding: 0.2rem;
+  background-color: rgb(241, 245, 252);
+  border-radius: 0.2rem;
+  > h2 {
+    transition: 0.3s;
+    cursor: pointer;
+    border: solid 0.05rem rgb(179, 175, 175);
+    padding: 0.5rem;
+    border-radius:0.2rem;
+    background-color: rgb(217, 224, 226);
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    flex-flow: row wrap;
+    justify-content: center;
+    width: auto;
+  }
+}

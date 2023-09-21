@@ -1,0 +1,129 @@
+.nav {
+  display: Flex;
+  flex-flow: column nowrap;
+  z-index: 10;
+  width: 100%;
+  > ul:nth-child(1) {
+    position: relative;
+    display: flex;
+    padding: 0.2rem 1rem 0.5rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+    border-bottom: solid 0.1rem white;
+    background-color: rgb(37, 54, 80);
+    > li {
+      transition: 0.3s;
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.2rem 0.2rem 0 0.2rem;
+      cursor: pointer;
+      justify-content: center;
+      > a {
+        color: white;
+        transition: 0.3s;
+        border-bottom: solid 0.2rem white;
+        &:hover {
+          border-bottom: solid 0.2rem yellow !important;
+        }
+      }
+      > a:nth-child(2) {
+        white-space: nowrap;
+        color: rgb(120, 182, 233);
+        border-bottom: solid 0.2rem rgb(120, 182, 233);
+        &:hover {
+          border-bottom: solid 0.2rem rgb(120, 182, 233) !important;
+        }
+      }
+    }
+    > li:nth-child(1) {
+      justify-content: left;
+      overflow: hidden;
+      width: 33.3%;
+      gap: 1rem;
+   
+    }
+    > li:nth-child(2) {
+    }
+  }
+  > ul:nth-child(2) {
+    padding: 0.5rem 0 0 0;
+    width: 20rem;
+    list-style-type: none;
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    left: -2rem;
+    top: 2.9rem;
+    z-index: 10;
+    gap: 0.3rem;
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 102%;
+      top: 0rem;
+      left: -1rem;
+      background-color: rgb(37, 54, 80);
+    }
+    > li {
+      &:hover {
+        transform: skew(-15deg, 0) translate(0.5rem, 0rem);
+      }
+
+      &:hover:after {
+        width: 125%;
+      }
+      li:hover {
+        color: rgb(228, 236, 240);
+      }
+      a {
+        padding: 0.1rem 0.5rem 0.2rem 0.5rem;
+        color: rgb(37, 54, 80);
+        font-size: 1.2rem;
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    > ul:nth-child(1) {
+      flex-flow: column nowrap;
+      height: 5rem;
+      > li:nth-child(1) {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+      }
+      > li:nth-child(3) {
+        justify-content: center;
+      }
+    }
+    > ul:nth-child(2) {
+      width: 100%;
+      left: 0rem;
+      height: calc(100% - 7rem);
+      top: 4.9rem;
+      overflow: hidden;
+      padding: 0 0 1rem 0;
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 102%;
+        top: 0rem;
+        left: 0;
+        background-color: rgb(39, 39, 58);
+      }
+      > li {
+        width: 92%;
+        transform: skew(-15deg, 0) translate(-2rem, 0.5rem);
+      }
+    }
+  }
+}

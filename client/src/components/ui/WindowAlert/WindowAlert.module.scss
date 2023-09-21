@@ -1,0 +1,16 @@
+.container {
+    background-color: rgba(223, 192, 57, 0.966);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: solid 0.1rem rgb(206, 182, 49);
+  padding: 2rem;
+  border-radius: .2rem;
+  > div:nth-child(3) {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+  }
+}

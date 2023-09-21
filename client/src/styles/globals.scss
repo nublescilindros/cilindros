@@ -1,0 +1,36 @@
+/* @import url(./fonts/material-icons);
+@import url(./fonts/material-symbols-outlined);
+@import url(./fonts/material-symbol-sharp); */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap"); */
+/* @import url(./fonts/Montserrat/Montserrat-ExtraLight.ttf); */
+
+@font-face {
+  font-family: "BowlbyOneSC";
+  src: url("./fonts/Bowlby_One_SC/BowlbyOneSC-Regular.ttf") format("truetype");
+}
+
+html,
+body,
+#root,
+#__next,
+.App {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "BowlbyOneSC", cursive;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: .05rem;
+  outline: none;
+  color: rgb(86, 86, 116);
+  outline: none;
+  user-select: none;
+}

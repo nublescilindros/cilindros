@@ -1,0 +1,74 @@
+.containerType0 {
+  position: relative;
+  padding: 0.5rem 0 0.7rem 0;
+  -webkit-appearance: none; /* Safari y Chrome */
+  -moz-appearance: none; /* Firefox */
+  appearance: none;
+  &::before {
+    background: url("../../../../public/img/svg/icons/expandMore.svg") no-repeat;
+    background-size: 100% 100%;
+    content: "";
+    position: absolute;
+    top: 0.7rem;
+    right: 0.2rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(105, 133, 158);
+    border-radius: 0.2rem;
+    pointer-events: none;
+    z-index: 2;
+  }
+  > label {
+    position: absolute;
+    font-size: 0.8rem;
+    top: -0.2rem;
+    left: 0.3rem;
+    border-radius: 0.2rem;
+    padding: 0rem 0.2rem 0rem 0.2rem;
+    z-index: 2;
+  }
+  select {
+    width: 100%;
+    padding: 0.8rem 1.5rem 0.2rem 0.6rem;
+    transition: 0.3s;
+    border-radius: 0.2rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    outline: none;
+    border: solid 0.05rem rgb(147, 168, 192);
+    z-index: 1;
+    cursor: pointer;
+    > option {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.containerType1 {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  > div:nth-child(2) {
+    flex-flow: column nowrap;
+    width: 2rem;
+    position: absolute;
+    top: 3.1rem;
+    left: 0;
+    border: solid 0.05rem rgb(190, 187, 187);
+    border-radius: 0.4rem;
+    overflow: hidden;
+    z-index: 5;
+    box-shadow: 0 0 1rem 0.01rem rgb(150, 148, 148);
+    > h3 {
+      padding: 0.03rem 0 0.03rem 0.8rem;
+      font-size: 0.8rem;
+
+      &:hover {
+        background-color: rgb(114, 112, 112);
+        color: white;
+      }
+    }
+  }
+}

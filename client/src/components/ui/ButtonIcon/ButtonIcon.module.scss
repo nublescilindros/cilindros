@@ -1,0 +1,17 @@
+.buttonIcon {
+  > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    > span {
+      color: #a7c686;
+      transition: 0.3s;
+      &:hover {
+        color: #fcee8c;
+        cursor: pointer;
+      }
+    }
+  }
+}

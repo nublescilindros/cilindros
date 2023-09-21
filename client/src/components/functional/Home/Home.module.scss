@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: url("../../../../public/img/svg/LOGO-GASES-ÑUBLE_page-0001.svg");
+  /* background: url("../../../../public/img/svg/LOGO-GASES-ÑUBLE_page-0001.svg"), radial-gradient(circle, rgba(247,255,48,1) 0%, rgba(255,255,255,1) 82%); */
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: center 1rem;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center 1rem;
+  }
+}
