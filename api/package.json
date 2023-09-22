@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node src/server.ts",
-    "dev": "node src/server.ts"
+    "build": "tsc --project tsconfig.json",
+    "start": "nodemon src/server.ts",
+    "dev": "nodemon src/server.ts"
   },
   "dependencies": {
     "@types/cors": "^2.8.13",
