@@ -8,10 +8,8 @@ const createAppServer = () => {
 
     const middlewares = () => {
         server.use(express.json());
-        server.use(cors({
-            origin: '*',
-            methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-        }));
+        server.use(cors());
+        server.use('*', cors());
         server.use(express.urlencoded({ extended: false }));
     };
 
