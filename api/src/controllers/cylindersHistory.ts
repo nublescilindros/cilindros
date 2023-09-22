@@ -77,10 +77,17 @@ const generateExcelCylinderCompany = async (req: any, res: any) => {
 
 };
 
+const test = async (req: any, res: any) => {
+        res.status(200).json({ state: true });
+
+};
+
+
 export {
     getAllCompanyCylindersCountHistory,
     getAllCompanyCylindersByDate,
-    generateExcelCylinderCompany
+    generateExcelCylinderCompany,
+    test
 };
 
 const createExcel = async (sheetLabel: string, data: any) => {
