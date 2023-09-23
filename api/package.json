@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc --project tsconfig.json",
-    "start": "cross-env NODE_ENV=prod nodemon src/server.ts",
+    "start": "cross-env NODE_ENV=prod nodemon dist/server.ts",
     "dev": "cross-env NODE_ENV=dev nodemon src/server.ts"
   },
   "dependencies": {
