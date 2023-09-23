@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc --project tsconfig.json",
-    "start": "cross-env NODE_ENV=prod nodemon dist/server.ts",
-    "dev": "cross-env NODE_ENV=dev nodemon src/server.ts"
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "@types/cors": "^2.8.13",
