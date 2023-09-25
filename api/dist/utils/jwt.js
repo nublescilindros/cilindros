@@ -63,4 +63,3 @@ const checkAuth = (req, res, next) => __awaiter(void 0, void 0, void 0, function
     }
 });
 exports.checkAuth = checkAuth;
-//# sourceMappingURL=jwt.js.map

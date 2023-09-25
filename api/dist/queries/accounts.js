@@ -49,4 +49,3 @@ const _deleteAccounts = `
         WHERE 
             accounts.rut_accounts = ?`;
 exports._deleteAccounts = _deleteAccounts;
-//# sourceMappingURL=accounts.js.map

@@ -58,4 +58,3 @@ SET
 WHERE 
     cylinders.code_cylinders =?;`;
 exports._updateCylinderRequestAndReception = _updateCylinderRequestAndReception;
-//# sourceMappingURL=formCylinders.js.map

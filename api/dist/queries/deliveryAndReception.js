@@ -70,4 +70,3 @@ const _updateCylinderReceptionDate = `
         cylinder_history.code_cylinder = ? and 
         received_date is null;`;
 exports._updateCylinderReceptionDate = _updateCylinderReceptionDate;
-//# sourceMappingURL=deliveryAndReception.js.map

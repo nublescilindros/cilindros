@@ -11,4 +11,3 @@ accountsRouter.post("/insertAccounts", jwt_1.checkAuth, accounts_1.insertAccount
 accountsRouter.put("/updateAccounts", jwt_1.checkAuth, accounts_1.updateAccounts);
 accountsRouter.delete("/deleteAccounts/:rut", jwt_1.checkAuth, accounts_1.deleteAccounts);
 exports.default = accountsRouter;
-//# sourceMappingURL=accounts.js.map

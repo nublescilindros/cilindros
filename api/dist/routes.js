@@ -16,4 +16,3 @@ const deliveryAndReception_1 = __importDefault(require("./routes/deliveryAndRece
 exports.deliveryAndReceptionRouter = deliveryAndReception_1.default;
 const cylindersHistory_1 = __importDefault(require("./routes/cylindersHistory"));
 exports.cylindersHistoryRouter = cylindersHistory_1.default;
-//# sourceMappingURL=routes.js.map

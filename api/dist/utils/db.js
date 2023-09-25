@@ -24,4 +24,3 @@ pool
     console.log(err, "mysqlbdd");
 });
 exports.default = pool;
-//# sourceMappingURL=db.js.map

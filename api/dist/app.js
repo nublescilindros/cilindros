@@ -55,4 +55,3 @@ const createAppServer = () => {
     return server;
 };
 exports.default = createAppServer();
-//# sourceMappingURL=app.js.map

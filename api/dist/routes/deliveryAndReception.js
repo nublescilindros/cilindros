@@ -8,4 +8,3 @@ deliveryAndReceptionRouter.get("/getAllCompanyCylindersCountAccounts/:rutAccount
 deliveryAndReceptionRouter.get("/getAllCompanyCylindersAccounts/:rutBusiness/:rutAccounts", jwt_1.checkAuth, deliveryAndReception_1.getAllCompanyCylindersAccounts);
 deliveryAndReceptionRouter.put("/updateCylinderDeliveryAndReception", jwt_1.checkAuth, deliveryAndReception_1.updateCylinderDeliveryAndReception);
 exports.default = deliveryAndReceptionRouter;
-//# sourceMappingURL=deliveryAndReception.js.map

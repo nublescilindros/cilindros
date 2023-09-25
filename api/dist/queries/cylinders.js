@@ -64,4 +64,3 @@ const _deleteCylinders = `
         WHERE 
             cylinders.code_cylinders = ?`;
 exports._deleteCylinders = _deleteCylinders;
-//# sourceMappingURL=cylinders.js.map

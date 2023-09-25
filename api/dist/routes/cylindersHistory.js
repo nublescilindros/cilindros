@@ -9,4 +9,3 @@ cylindersHistoryRouter.get("/getAllCompanyCylindersByDate/:rutBusiness/:delivere
 cylindersHistoryRouter.post("/generateExcelCylinderCompany", cylindersHistory_1.generateExcelCylinderCompany);
 cylindersHistoryRouter.post("/test", cylindersHistory_1.test);
 exports.default = cylindersHistoryRouter;
-//# sourceMappingURL=cylindersHistory.js.map

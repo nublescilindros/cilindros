@@ -15,4 +15,3 @@ const config = {
     dbQueueLimit: 0,
 };
 exports.default = config;
-//# sourceMappingURL=config.js.map

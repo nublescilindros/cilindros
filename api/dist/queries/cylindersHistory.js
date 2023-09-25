@@ -49,4 +49,3 @@ WHERE
    
     `;
 exports._getAllCompanyCylindersByDate = _getAllCompanyCylindersByDate;
-//# sourceMappingURL=cylindersHistory.js.map

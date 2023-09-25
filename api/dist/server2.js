@@ -11,4 +11,3 @@ app.get('/', (req, res) => {
 app.listen(6760, () => {
     console.log("p....");
 });
-//# sourceMappingURL=server2.js.map

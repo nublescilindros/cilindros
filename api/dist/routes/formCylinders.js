@@ -9,4 +9,3 @@ formCylindersRouter.get("/getAllCylindersCompanyByRut/:rutBusiness", jwt_1.check
 formCylindersRouter.put("/updateCylinderState", jwt_1.checkAuth, formCylinders_1.updateCylinderState);
 formCylindersRouter.put("/updateCylinderRequestAndReception", jwt_1.checkAuth, formCylinders_1.updateCylinderRequestAndReception);
 exports.default = formCylindersRouter;
-//# sourceMappingURL=formCylinders.js.map

@@ -123,4 +123,3 @@ const verifyUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     res.send({ errorToken: true });
 });
 exports.verifyUser = verifyUser;
-//# sourceMappingURL=accounts.js.map

@@ -95,4 +95,3 @@ const validateUser = (id, password) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.validateUser = validateUser;
-//# sourceMappingURL=accounts.js.map

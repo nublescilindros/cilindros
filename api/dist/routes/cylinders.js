@@ -11,4 +11,3 @@ cylindersRouter.post("/insertCylinders", jwt_1.checkAuth, cylinders_1.insertCyli
 cylindersRouter.put("/updateCylinders", jwt_1.checkAuth, cylinders_1.updateCylinders);
 cylindersRouter.delete("/deleteCylinders/:code", jwt_1.checkAuth, cylinders_1.deleteCylinders);
 exports.default = cylindersRouter;
-//# sourceMappingURL=cylinders.js.map

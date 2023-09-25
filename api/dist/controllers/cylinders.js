@@ -115,4 +115,3 @@ const deleteCylinders = (req, res) => __awaiter(void 0, void 0, void 0, function
     }
 });
 exports.deleteCylinders = deleteCylinders;
-//# sourceMappingURL=cylinders.js.map

@@ -9,4 +9,3 @@ clientsRouter.post("/insertClients", jwt_1.checkAuth, clients_1.insertClients);
 clientsRouter.put("/updateClients", jwt_1.checkAuth, clients_1.updateClients);
 clientsRouter.delete("/deleteClients/:rutBusiness", jwt_1.checkAuth, clients_1.deleteClients);
 exports.default = clientsRouter;
-//# sourceMappingURL=clients.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* import { Router } from "express";
 
 import { generatePdf, generateExcel } from "../controllers/generator";
@@ -9,4 +10,3 @@ GeneratorRouter.post("/generateExcel", generateExcel);
 
 export default GeneratorRouter;
  */ 
-//# sourceMappingURL=generator.js.map

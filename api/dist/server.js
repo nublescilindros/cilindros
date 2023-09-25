@@ -11,4 +11,3 @@ console.log('port ' + apiPort + " ....");
 /* app.listen(3000, "0.0.0.0", function () {
     
 });  */
-//# sourceMappingURL=server.js.map

@@ -52,4 +52,3 @@ const getAllCompanyCylindersByDate = (rutBusiness, deliveredDate, receivedDate) 
     }
 });
 exports.getAllCompanyCylindersByDate = getAllCompanyCylindersByDate;
-//# sourceMappingURL=cylindersHistory.js.map

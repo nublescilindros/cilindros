@@ -36,4 +36,3 @@ const _deleteClients = `
         WHERE 
             clients.rut_business = ?`;
 exports._deleteClients = _deleteClients;
-//# sourceMappingURL=clients.js.map
