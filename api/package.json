@@ -6,7 +6,7 @@
   "scripts": {
     "watch":"tsc -w",
     "build": "tsc",
-    "start": "cross-env NODE_ENV=dev node dist/server.js",
+    "start": "node dist/server2.js",
     "dev": "cross-env NODE_ENV=dev nodemon src/server.ts"
   },
   "dependencies": {
