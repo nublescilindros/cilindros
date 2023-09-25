@@ -8,7 +8,7 @@ const app = (0, express_1.default)();
 app.get('/', (req, res) => {
     res.send("<h2>railwaysssss</h2>");
 });
-app.listen(3000, () => {
+app.listen(6760, () => {
     console.log("p....");
 });
 //# sourceMappingURL=server2.js.map
