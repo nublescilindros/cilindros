@@ -1,9 +1,16 @@
 import config from "./utils/config";
-import createLogger from "./utils/logger";
 import app from "./app";
 
-const { env, apiPort } = config;
+const { apiPort } = config;
 
-app.listen(6067);
-createLogger.info(`API running on 6067`);
-createLogger.info(`API listening port 6067`);
+app.listen(apiPort);
+console.log('port '+apiPort+" ....")
+
+
+/* app.listen(3000, "0.0.0.0", function () {
+    
+});  */
+
+
+
+
