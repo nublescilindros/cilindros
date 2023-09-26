@@ -1,20 +1,36 @@
 {
-  "name": "backDeploy",
+  "name": "admin-api",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "watch": "tsc -w",
-    "build": "tsc",
-    "start": "node dist/server2.js"
+    "build": "tsc --project tsconfig.json",
+    "start": "cross-env NODE_ENV=prod nodemon src/server.ts",
+    "dev": "cross-env NODE_ENV=dev nodemon src/server.ts"
   },
   "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.18",
-    "@types/node": "^20.7.0",
-    "nodemon": "^3.0.1",
-    "typescript": "^5.2.2"
+    "@types/cors": "^2.8.13",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.17",
+    "@types/express-session": "^1.17.7",
+    "@types/html-pdf": "^3.0.0",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^20.2.5",
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "custom-env": "^2.0.2",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "html-pdf": "^3.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.22",
+    "phantomjs": "^2.1.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "winston": "^3.9.0",
+    "xlsx": "^0.18.5"
   }
 }
