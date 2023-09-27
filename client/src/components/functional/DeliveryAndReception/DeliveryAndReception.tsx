@@ -53,7 +53,6 @@ const DeliveryAndReception = () => {
 
   const [menu, setmenu] = useState({
     currentSelection: 0,
-    stateMsjCompany: "entrega",
     stateMsjCylinders: "Cilindros",
     list: [{ name: "Entrega" }, { name: "Recepción" }],
   });
@@ -88,20 +87,8 @@ const DeliveryAndReception = () => {
       currentSelection: index,
     });
 
-    /*     switch (menu.currentSelection) {
-      case 0:
-          getAllCylinders();
-        break;
-      case 1:
-        getAllCylinders(); 
-        break;
-
-      default:
-        break;
-    }  */
-
     if (user.rut?.length > 0) {
-      console.log("data");
+      setmenu({ ...menu, stateMsjCylinders: data[1] });
       getAllCompanyCylindersAccounts(data[2], user.rut);
     }
   };
@@ -202,6 +189,7 @@ const DeliveryAndReception = () => {
     switch (menu.currentSelection) {
       case 0:
         if (user.rut?.length > 0) {
+          setmenu({ ...menu, stateMsjCylinders: "Empresa" });
           getAllCompanyCylindersCountAccounts(user.rut, 2);
           setStateListCylinders({
             ...stateListCylinders,
@@ -213,6 +201,7 @@ const DeliveryAndReception = () => {
         break;
       case 1:
         if (user.rut?.length > 0) {
+          setmenu({ ...menu, stateMsjCylinders: "Empresa" });
           getAllCompanyCylindersCountAccounts(user.rut, 4);
           setStateListCylinders({
             ...stateListCylinders,
