@@ -7,6 +7,8 @@ const _getAllAccounts = `
         admin_accounts as admin
      FROM
         accounts
+     WHERE
+        admin_accounts =0
         `;
 
 const _validateUser = `
