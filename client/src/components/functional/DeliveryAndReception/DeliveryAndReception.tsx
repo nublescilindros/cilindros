@@ -65,6 +65,7 @@ const DeliveryAndReception = () => {
       { name: "Empresa" },
       { name: "Rut Empresa" },
       { name: "Encargado" },
+      { name: "Dirección" },
     ],
     arrayData: [],
   });
@@ -88,7 +89,7 @@ const DeliveryAndReception = () => {
     });
 
     if (user.rut?.length > 0) {
-      setmenu({ ...menu, stateMsjCylinders: data[1] });
+      setmenu({ ...menu, stateMsjCylinders: data[1]+ " Dirección: "+data[4] });
       getAllCompanyCylindersAccounts(data[2], user.rut);
     }
   };
@@ -216,7 +217,8 @@ const DeliveryAndReception = () => {
   }, [menu.currentSelection, user]);
 
   useEffect(() => {
-    console.log(listCompanyCylindersCountAccounts);
+    console.log(listCompanyCylindersCountAccounts, "akiiiiiiiiiiiiii");
+
     listCompanyCylindersCountAccounts.length > 0
       ? setStateListCompany({
           ...stateListCompany,
@@ -226,6 +228,7 @@ const DeliveryAndReception = () => {
             list.businessName,
             list.businessRut,
             list.nameManager,
+            list.addressBusiness,
           ]),
         })
       : setStateListCompany({

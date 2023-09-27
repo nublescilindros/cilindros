@@ -5,7 +5,8 @@ const _getAllCompanyCylindersCountAccounts = `
         clients.rut_business As businessRut,
         clients.name_manager As nameManager,
         cylinders.state_cylinders As state,
-        COUNT(cylinders.code_cylinders) AS cylindersCount
+        COUNT(cylinders.code_cylinders) AS cylindersCount,
+        clients.address_business As addressBusiness
     FROM
         clients 
     LEFT JOIN
