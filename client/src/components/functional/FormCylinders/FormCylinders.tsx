@@ -434,7 +434,6 @@ const FormCylinders = () => {
 
             if (stateCylindersCompany.currentSelection != null) {
               changeDisabledAssign(true, false, true, "Retirar");
-
             }
           }}
           text={"Cancelar"}
@@ -551,11 +550,13 @@ const FormCylinders = () => {
 
           break;
         case 1:
-          changeDisabledAssign(true, false, false);
-          setStateCylindersCompany({
-            ...stateCylindersCompany,
-            currentSelection: null,
-          });
+          if (stateListCompany.currentSelection != null) {
+            changeDisabledAssign(true, false, false);
+            setStateCylindersCompany({
+              ...stateCylindersCompany,
+              currentSelection: null,
+            });
+          }
 
           break;
         default:
