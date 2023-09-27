@@ -62,7 +62,7 @@ export const userStore = create<userState>((set, get) => ({
         return
       }
       localStorage.setItem("tokenCylindersMunos", JSON.stringify(data.token));
-
+      console.log(data.admin,'state admin')
       set((state) => ({
         ...state, user: { user: data.user, admin: data.admin }
       }));
