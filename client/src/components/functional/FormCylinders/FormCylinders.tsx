@@ -113,7 +113,7 @@ const FormCylinders = () => {
       { name: "Contenido" },
       { name: "Capacidad" },
       { name: "¿de ñubles?" },
-      { name: "Rut responsable" },
+      { name: "nombre responsable" },
       { name: "Estado" },
     ],
     arrayData: [],
@@ -518,7 +518,7 @@ const FormCylinders = () => {
               list.content,
               list.capacity,
               list.own === 0 ? "Si" : "No",
-              list.rutAccounts,
+              list.nameAccounts,
               nameState,
             ];
           }),

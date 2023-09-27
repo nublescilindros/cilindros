@@ -16,26 +16,30 @@ const _getAllCompanyCylindersCount = `
 
 const _getAllCylindersCompanyByRut = `
     SELECT
-        cylinders.code_cylinders as code,
-        content.name_content as content,
-        capacity.name_capacity as capacity,
-        cylinders.own_cylinders as own,
-        cylinders.state_cylinders as stateCylinders,
-        cylinders.rut_accounts as rutAccounts
+cylinders.code_cylinders as code,
+content.name_content as content,
+capacity.name_capacity as capacity,
+cylinders.own_cylinders as own,
+cylinders.state_cylinders as stateCylinders,
+accounts.name_accounts as nameAccounts
     FROM
-        cylinders
+cylinders
     INNER JOIN
-        content
+content
     ON 
-        cylinders.id_content = content.id_content
+cylinders.id_content = content.id_content
     INNER JOIN
-        capacity
+capacity
     ON 
-        cylinders.id_capacity = capacity.id_capacity
+cylinders.id_capacity = capacity.id_capacity
+    INNER JOIN
+accounts
+    ON
+cylinders.rut_accounts = accounts.rut_accounts
     WHERE 
-        cylinders.acquired_by =?    
+cylinders.acquired_by ='100233312'    
     ORDER BY
-        cylinders.code_cylinders;`;
+cylinders.code_cylinders;`;
 
 const _updateCylinderState = `
     UPDATE 
