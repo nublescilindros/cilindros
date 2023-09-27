@@ -21,7 +21,7 @@ const tokeSign = async (user: any) => {
   },
     config.secret,
     {
-      expiresIn: "2h"
+      expiresIn: "365d"
     }
   );
 }

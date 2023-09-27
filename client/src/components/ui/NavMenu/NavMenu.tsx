@@ -22,8 +22,8 @@ const NavMenu = ({ adminState }: any) => {
         route: "deliveryAndReception",
         admin: false,
       },
-      { name: "Formulario Cilindros", route: "formCylinders", admin: false },
-      { name: "Historial", route: "cylinderHistory", admin: false },
+      { name: "Formulario Cilindros", route: "formCylinders", admin: true },
+      { name: "Historial", route: "cylinderHistory", admin: true },
     ],
   });
 
