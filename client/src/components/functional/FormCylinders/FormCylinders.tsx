@@ -244,7 +244,10 @@ const FormCylinders = () => {
   };
 
   const onClickTableCylindersCompanyCount = (data: any, index: number) => {
+    console.log(data)
+
     if (data[3] > 0) {
+      console.log(data)
       getAllCylindersCompany(data[1]);
     } else {
       setStateCylindersCompany({
@@ -266,6 +269,8 @@ const FormCylinders = () => {
   };
 
   const onClickTableCylindersCompany = (data: any, index: number) => {
+
+
     if (data[5] === "En uso") {
       setStateCylindersCompany({
         ...stateCylindersCompany,
@@ -493,7 +498,8 @@ const FormCylinders = () => {
   }, [menu.currentSelection, listCylinders, listCompanyCylindersCount]);
 
   useEffect(() => {
-    console.log(listCylindersCompany);
+console.log(listCylindersCompany);
+
     listCylindersCompany.length > 0
       ? setStateCylindersCompany({
           ...stateCylindersCompany,

@@ -59,7 +59,7 @@ const CylinderHistory = () => {
     });
 
   const [menu, setMenu] = useState({
-    stateMsj: "Información",
+    stateMsj: "",
   });
 
   const [stateListCompanyCount, setStateListCompanyCount] = useState<any>({

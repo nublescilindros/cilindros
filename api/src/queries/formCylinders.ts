@@ -37,7 +37,7 @@ accounts
     ON
 cylinders.rut_accounts = accounts.rut_accounts
     WHERE 
-cylinders.acquired_by ='100233312'    
+cylinders.acquired_by =?    
     ORDER BY
 cylinders.code_cylinders;`;
 

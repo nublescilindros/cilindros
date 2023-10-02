@@ -25,7 +25,9 @@ const getAllCompanyCylindersCount = async (req: any, res: any) => {
 const getAllCylindersCompanyByRut = async (req: any, res: any) => {
     try {
         const { rutBusiness } = req.params;
+        console.log(rutBusiness);
         const result = await formCylinders.getAllCylindersCompanyByRut(rutBusiness);
+        console.log(result);
         res.status(200).json({
             ...result
         });
@@ -55,7 +57,7 @@ const updateCylinderState = async (req: any, res: any) => {
 const updateCylinderRequestAndReception = async (req: any, res: any) => {
     try {
         const { rutBusiness, codeCylinders, rutAccounts, stateCylinders } = req.body;
-  
+
         const result = await formCylinders.updateCylinderRequestAndReception(
             rutBusiness, codeCylinders, rutAccounts, stateCylinders);
         res.status(200).json({
