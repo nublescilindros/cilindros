@@ -2,9 +2,7 @@ import { Router } from "express";
 import {
     getAllCompanyCylindersCountHistory,
     getAllCompanyCylindersByDate,
-    generateExcelCylinderCompany,
-    test
-
+    generateExcelCylinderCompany
 } from "../controllers/cylindersHistory";
 import { checkAuth } from "../utils/jwt";
 
@@ -17,7 +15,5 @@ cylindersHistoryRouter.get("/getAllCompanyCylindersByDate/:rutBusiness/:delivere
     getAllCompanyCylindersByDate);
 
 cylindersHistoryRouter.post("/generateExcelCylinderCompany", generateExcelCylinderCompany);
-
-cylindersHistoryRouter.post("/test", test);
 
 export default cylindersHistoryRouter;

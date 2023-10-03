@@ -25,7 +25,8 @@ SELECT
     content.name_content as nameContent,
     capacity.name_capacity as nameCapacity,
     DATE_FORMAT(cylinder_history.delivered_date, '%Y-%m-%d') as deliveredDate,
-    DATE_FORMAT(cylinder_history.received_date, '%Y-%m-%d') as receivedDate
+    DATE_FORMAT(cylinder_history.received_date, '%Y-%m-%d') as receivedDate,
+    cylinders.own_cylinders as ownCylinders
 FROM 
 	cylinder_history
 INNER JOIN
@@ -45,7 +46,6 @@ WHERE
     cylinder_history.delivered_date >= ? and 
     cylinder_history.delivered_date <= ? and 
     not cylinder_history.received_date is null
-   
     `;
 
 export {

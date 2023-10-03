@@ -89,6 +89,7 @@ const Ranges = ({
           text="Inicio"
           type="date"
           onChange={onChangeRanges}
+          data-date-format="DD MMMM YYYY"
         />
         <Input
           name={nameRanges[1]}
@@ -97,6 +98,7 @@ const Ranges = ({
           text="Fin"
           type="date"
           onChange={onChangeRanges}
+          data-date-format="DD MMMM YYYY"
         />
       </div>
     </div>

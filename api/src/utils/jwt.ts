@@ -2,11 +2,6 @@ import jwt from "jsonwebtoken";
 
 import config from "./config";
 
-/* const generateToken = (payload: any) => {
-  const token = jwt.sign(payload, config.secret);
-  return token;
-}; */
-
 const getToken = (token: any) => {
   const tokenRegex = /Bearer "(.*?)"/;
   const match = token.match(tokenRegex);
@@ -57,7 +52,5 @@ const checkAuth = async (req: any, res: any, next: any) => {
 
   }
 }
-
-
 
 export { tokeSign, verifyToken, checkAuth, getToken };

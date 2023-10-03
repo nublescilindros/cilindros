@@ -54,6 +54,7 @@ const CylinderHistory = () => {
         { name: "Fecha entrega" },
         { name: "Fecha recepción" },
         { name: "Dias" },
+        { name: "¿De Ñubles?" },
       ],
       arrayData: [],
     });
@@ -157,6 +158,8 @@ const CylinderHistory = () => {
             let receivedDate: any = new Date(list.receivedDate);
             dateDays = receivedDate - deliveredDate;
             dateDays = dateDays / (1000 * 60 * 60 * 24);
+            let own = list.ownCylinders === 0 ? "Si" : "No";
+
             return [
               list.codeCylinder,
               list.nameContent,
@@ -164,6 +167,7 @@ const CylinderHistory = () => {
               list.deliveredDate,
               list.receivedDate,
               dateDays,
+              own,
             ];
           }),
         })
@@ -278,6 +282,7 @@ const CylinderHistory = () => {
                     deliveredDate: item[3],
                     receivedDate: item[4],
                     dateDays: item[5],
+                    ownCyliders: item[6],
                   };
                 })
               );

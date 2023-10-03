@@ -57,9 +57,11 @@ const generateExcelCylinderCompany = async (req: any, res: any) => {
             capacity: item.capacity,
             deliveredDate: item.deliveredDate,
             receivedDate: item.receivedDate,
-            dateDays: item.dateDays
+            dateDays: item.dateDays,
+            ownCyliders: item.ownCyliders
         };
     });
+
     await createExcel("Historial", data);
     const success = await createExcel("Historial", data);
     if (success) {
@@ -69,17 +71,6 @@ const generateExcelCylinderCompany = async (req: any, res: any) => {
         console.log("Hubo un error al crear el archivo de Excel.");
     }
 
-
-
-  
-
-
-
-};
-
-const test = async (req: any, res: any) => {
-        res.status(200).json({ state: true });
-
 };
 
 
@@ -87,7 +78,6 @@ export {
     getAllCompanyCylindersCountHistory,
     getAllCompanyCylindersByDate,
     generateExcelCylinderCompany,
-    test
 };
 
 const createExcel = async (sheetLabel: string, data: any) => {
@@ -98,7 +88,7 @@ const createExcel = async (sheetLabel: string, data: any) => {
     const ws: any = XLSX.utils.book_new();
     const wb = { Sheets: { [sheetName]: ws }, SheetNames: [sheetName] };
 
-    const wscols = [{ wch: 15 }, { wch: 15 }, { wch: 15 }, { wch: 15 }, { wch: 15 }, { wch: 5 }];
+    const wscols = [{ wch: 15 }, { wch: 15 }, { wch: 15 }, { wch: 15 }, { wch: 15 }, { wch: 5 }, { wch: 13 }];
 
     ws["!cols"] = wscols;
 
@@ -106,9 +96,10 @@ const createExcel = async (sheetLabel: string, data: any) => {
         "Código",
         "Contenido",
         "Capacidad",
-        "Fecha entrega",
+        "Fecha Entrega",
         "Fecha Recepción",
-        "Días"
+        "Días",
+        "¿De Ñubles?"
     ]], {
         origin: "A1",
     });
