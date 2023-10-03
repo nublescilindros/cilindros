@@ -119,8 +119,6 @@ export const cylindersHistoryStore = create<cylindersHistoryState>((set, get) =>
                     return
                 }
 
-                console.log(data,"22222222")
-
                 set((state) => ({
                     ...state, excelStateGenerate: data.state,
                 }));

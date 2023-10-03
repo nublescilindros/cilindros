@@ -76,7 +76,6 @@ const CrudAccounts = () => {
   };
 
   const onClickTable = (current: string, index: number) => {
-    console.log(current[0], index);
 
     switch (menu.currentSelection) {
       case 1:

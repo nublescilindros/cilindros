@@ -5,7 +5,6 @@ const getAllCompanyCylindersCountAccounts = async (req: any, res: any) => {
     try {
 
         const { rutAccounts, state } = req.params;
-        console.log(rutAccounts, "asdasdas")
         const result = await deliveryAndReception.getAllCompanyCylindersCountAccounts(rutAccounts, state);
         res.status(200).json({
             ...result
@@ -37,7 +36,6 @@ const getAllCompanyCylindersAccounts = async (req: any, res: any) => {
 const updateCylinderDeliveryAndReception = async (req: any, res: any) => {
     try {
         const { codeCylinders, state, rutBusiness, rutAccounts, stateCompany } = req.body;
-        console.log(codeCylinders, state, rutBusiness, rutAccounts, stateCompany)
         const result = await deliveryAndReception.updateCylinderDeliveryAndReception(
             codeCylinders, state, rutBusiness, rutAccounts, stateCompany);
         res.status(200).json({

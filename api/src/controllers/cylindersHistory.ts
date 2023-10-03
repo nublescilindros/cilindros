@@ -27,10 +27,6 @@ const getAllCompanyCylindersByDate = async (req: any, res: any) => {
             receivedDate
         } = req.params;
 
-        console.log(rutBusiness,
-            deliveredDate,
-            receivedDate)
-
         const result = await cylindersHistory.getAllCompanyCylindersByDate(
             rutBusiness,
             deliveredDate,

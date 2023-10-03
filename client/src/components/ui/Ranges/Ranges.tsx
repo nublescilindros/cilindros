@@ -23,7 +23,6 @@ const Ranges = ({
         ) {
           console.log("Fecha de inicio no puede ser mayor a fecha fin");
         } else {
-          console.log(e.currentTarget.value);
           state[1]({
             ...state[0],
             dateRangeStart: {
@@ -41,7 +40,6 @@ const Ranges = ({
         ) {
           console.log("Fecha fin no puede ser menor a fecha inicio");
         } else {
-          console.log(e.currentTarget.value);
           state[1]({
             ...state[0],
             dateRangeEnd: {
@@ -59,10 +57,6 @@ const Ranges = ({
   useEffect(() => {
     setStateRanges({ ...stateRanges, check: check });
   }, [check]);
-
-  useEffect(() => {
-    console.log(dateStart, dateEnd);
-  }, [dateStart, dateEnd]);
 
   return (
     <div className={styles.container}>

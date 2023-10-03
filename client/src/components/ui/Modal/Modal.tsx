@@ -9,27 +9,10 @@ const Modal = ({
 }: any) => {
   const { modal } = useUi();
 
-  /*   const [state, setState] = useState({ show: false, opacity: 0 });
-
-  useEffect(() => {
-    if (modal.state) {
-      setState({ opacity: 1, show: modal.state });
-    } else {
-      setState({ ...state, opacity: 0 });
-
-      setTimeout(() => {
-        setState({ ...state, show: false });
-      }, 500);
-    }
-
-console.log(modal.state, state)
-
-  }, [modal.state]); */
-
   return modal.state ? (
     modal.type === 0 ? (
       <div
-        style={{ backgroundColor /* , opacity: state.opacity */ }}
+        style={{ backgroundColor  }}
         className={styles.container}
       >
         <Loading text={modal.text} />
@@ -38,7 +21,6 @@ console.log(modal.state, state)
       <div
         style={{
           backgroundColor: "rgba(223, 193, 57, 0.603)",
-          /* opacity: state.opacity, */
         }}
         className={styles.container}
       >

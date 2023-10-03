@@ -90,7 +90,6 @@ export const formCylindersStore = create<formCylindersState>((set, get) => ({
                     resetModal()
                     return
                 }
-console.log(data.rows,"storeee")
                 set((state) => ({
                     ...state, listCylindersCompany: data.rows,
                 }));
@@ -163,9 +162,6 @@ console.log(data.rows,"storeee")
                     resetModal()
                     return
                 }
-
-
-                console.log(data);
 
                 set((state) => ({
                     ...state,

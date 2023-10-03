@@ -217,7 +217,6 @@ const DeliveryAndReception = () => {
   }, [menu.currentSelection, user]);
 
   useEffect(() => {
-    console.log(listCompanyCylindersCountAccounts, "akiiiiiiiiiiiiii");
 
     listCompanyCylindersCountAccounts.length > 0
       ? setStateListCompany({
@@ -238,7 +237,6 @@ const DeliveryAndReception = () => {
   }, [listCompanyCylindersCountAccounts]);
 
   useEffect(() => {
-    console.log(listCompanyCylindersAccounts, "effectttttt");
     listCompanyCylindersAccounts.length > 0
       ? setStateListCylinders({
           ...stateListCylinders,
@@ -274,10 +272,6 @@ const DeliveryAndReception = () => {
   useEffect(() => {
     setUi({ titleNavMenu: "Entrega y recepción" });
   }, []);
-
-  useEffect(() => {
-    console.log(stateListCylinders);
-  }, [stateListCylinders]);
 
   return (
     <div className={styles.container}>

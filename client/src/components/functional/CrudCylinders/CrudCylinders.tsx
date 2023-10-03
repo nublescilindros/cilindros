@@ -82,11 +82,9 @@ const CrudCylinders = () => {
   };
 
   const onClickTable = (current: string, index: number) => {
-    console.log(current, index);
 
     switch (menu.currentSelection) {
       case 1:
-        console.log(current);
         setStateForm({
           ...stateForm,
           code: {
@@ -526,7 +524,6 @@ const CrudCylinders = () => {
   ]);
 
   useEffect(() => {
-    console.log(listCylinders);
     setStateListAccounts({
       ...stateListAccounts,
       arrayData: listCylinders.map((list: any) => [

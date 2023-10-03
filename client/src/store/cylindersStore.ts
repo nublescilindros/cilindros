@@ -175,7 +175,6 @@ export const cylindersStore = create<userState>((set, get) => ({
   updateCylinders: async (code: any, capacity: any, content: any, own: any) => {
     if (uiStore.getState().token != null) {
       try {
-        console.log(code, capacity, content)
         setUi({ modal: { ...uiStore.getState().modal, text: "Modificando cilindro", state: true, type: 0 } })
         const { data } = await apiInstance(uiStore.getState().token).
           apiAxios.put(`/cylinders/updateCylinders`, {

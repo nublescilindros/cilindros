@@ -32,7 +32,6 @@ export const deliveryAndReceptionStore = create<deliveryAndReceptionState>((set,
     getAllCompanyCylindersCountAccounts: async (rutAccounts: string, state: number) => {
         if (uiStore.getState().token != null) {
             try {
-                console.log('storeeeeeee')
                 setUi({ modal: { ...uiStore.getState().modal, text: "Cargando cilindros", state: true, type: 0 } })
                 const { data } = await apiInstance(uiStore.getState().token).
                     apiAxios.get(`/deliveryAndReception/getAllCompanyCylindersCountAccounts/${rutAccounts}/${state}`);
@@ -100,7 +99,6 @@ export const deliveryAndReceptionStore = create<deliveryAndReceptionState>((set,
         codeCylinders: string, state: number, rutBusiness: string, rutAccounts: string, stateCompany: number) => {
         if (uiStore.getState().token != null) {
             try {
-                console.log(codeCylinders, state)
                 setUi({ modal: { ...uiStore.getState().modal, text: "Disponiendo cilindro", state: true, type: 0 } })
                 const { data } = await apiInstance(uiStore.getState().token).
                     apiAxios.put(`/deliveryAndReception/updateCylinderDeliveryAndReception`, {
@@ -120,7 +118,6 @@ export const deliveryAndReceptionStore = create<deliveryAndReceptionState>((set,
                     resetModal()
                     return
                 }
-                console.log(data.rows, "storeeeeeeeeee")
                 set((state) => ({
                     ...state,
                     listCompanyCylindersCountAccounts: data.rows[0],

@@ -118,13 +118,7 @@ const CylinderHistory = () => {
     getAllContent();
   }, []);
 
-  
   useEffect(() => {
-    console.log(dateCurrent());
-  }, []);
-
-  useEffect(() => {
-    console.log(stateListCompanyCount);
 
     stateListCompanyCount.dataSelect.length > 0
       ? setMenu({
@@ -273,7 +267,7 @@ const CylinderHistory = () => {
             text={stateForm.button.text}
             disabled={stateForm.button.disabled}
             onclick={() => {
-              console.log("sss");
+
               generateExcelCylinderCompany(
                 stateListCylindersCompanyDate.arrayData.map((item: any) => {
                   return {

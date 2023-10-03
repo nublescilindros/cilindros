@@ -25,9 +25,9 @@ const getAllCompanyCylindersCount = async (req: any, res: any) => {
 const getAllCylindersCompanyByRut = async (req: any, res: any) => {
     try {
         const { rutBusiness } = req.params;
-        console.log(rutBusiness);
+  
         const result = await formCylinders.getAllCylindersCompanyByRut(rutBusiness);
-        console.log(result);
+
         res.status(200).json({
             ...result
         });
