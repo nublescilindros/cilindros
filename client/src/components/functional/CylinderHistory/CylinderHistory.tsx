@@ -118,6 +118,7 @@ const CylinderHistory = () => {
     getAllContent();
   }, []);
 
+  
   useEffect(() => {
     console.log(dateCurrent());
   }, []);
