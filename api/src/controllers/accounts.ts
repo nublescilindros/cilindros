@@ -84,11 +84,7 @@ const validateUser = async (req: any, res: any) => {
     }
 }
 const verifyUser = async (req: any, res: any) => {
-
-    console.log("statee adminn")
-
     let token = req.headers.authorization
-    console.log("statee adminn")
 
     const tokenData: any = await verifyToken(getToken(token));
     console.log(tokenData.admin, "statee adminn")
