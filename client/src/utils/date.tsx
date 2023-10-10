@@ -1,9 +1,11 @@
 const dateCurrent = () => {
   let dayCurrent = new Date();
-  let day =
-    dayCurrent.getDate() > 10
-      ? dayCurrent.getDate()
-      : "0" + dayCurrent.getDate();
+
+      let day = dayCurrent.getDate() < 10
+      ? "0" + dayCurrent.getDate()
+      : dayCurrent.getDate();
+
+
       let month =
       dayCurrent.getMonth() + 1 >= 10
         ? dayCurrent.getMonth() + 1
