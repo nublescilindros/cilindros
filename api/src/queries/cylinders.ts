@@ -40,9 +40,9 @@ const _getAllCylinders = `
 const _insertCylinders = `
         INSERT INTO 
             cylinders 
-            (code_cylinders, id_content, id_capacity, state_cylinders, own_cylinders) 
+            (code_cylinders, id_content, id_capacity, state_cylinders, own_cylinders, acquired_by, rut_accounts) 
         VALUES 
-            (?, ?, ?, 0, ?);`;
+            (?, ?, ?, 0, ?, '', '');`;
 
 const _updateCylinders = `
         UPDATE 
