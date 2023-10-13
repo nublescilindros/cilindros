@@ -390,7 +390,7 @@ const CrudClients = () => {
   }, [menu.currentSelection]);
 
   useEffect(() => {
-    if (
+    if ( 
       stateForm.rutBusiness.text.length > 4 &&
       stateForm.nameBusiness.text.length > 1 &&
       stateForm.nameManager.text.length > 2 &&
