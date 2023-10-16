@@ -4,7 +4,7 @@ const _getAllContent = `
         name_content as name
     FROM content;
         `;
-        
+
 const _getAllCapacity = `
     SELECT 
         id_capacity as id,
@@ -40,7 +40,7 @@ const _getAllCylinders = `
 const _insertCylinders = `
         INSERT INTO 
             cylinders 
-            (code_cylinders, id_content, id_capacity, state_cylinders, own_cylinders, acquired_by, rut_accounts) 
+            (code_cylinders,id_capacity, id_content, state_cylinders, own_cylinders, acquired_by, rut_accounts) 
         VALUES 
             (?, ?, ?, 0, ?, '', '');`;
 

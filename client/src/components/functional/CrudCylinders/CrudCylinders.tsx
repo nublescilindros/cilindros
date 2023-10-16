@@ -82,7 +82,6 @@ const CrudCylinders = () => {
   };
 
   const onClickTable = (current: string, index: number) => {
-
     switch (menu.currentSelection) {
       case 1:
         setStateForm({
@@ -168,7 +167,17 @@ const CrudCylinders = () => {
   const onClickAction = () => {
     switch (menu.currentSelection) {
       case 0:
-        insertCylinders(
+        /*       insertCylinders(
+          stateForm.code.text,
+          listCapacity.filter(
+            (list: any) => list.name === stateForm.capacity.text
+          )[0].id,
+          listContent.filter(
+            (list: any) => list.name === stateForm.content.text
+          )[0].id,
+          stateForm.own.text == "Si" ? 0 : 1
+        ); */
+        console.log(
           stateForm.code.text,
           listCapacity.filter(
             (list: any) => list.name === stateForm.capacity.text
@@ -178,6 +187,7 @@ const CrudCylinders = () => {
           )[0].id,
           stateForm.own.text == "Si" ? 0 : 1
         );
+
         setStateForm({
           ...stateForm,
           code: {
@@ -566,6 +576,10 @@ const CrudCylinders = () => {
     setUi({ titleNavMenu: "Cilindros" });
   }, []);
 
+  useEffect(() => {
+    console.log(listContent);
+  }, [listContent]);
+
   return (
     <div className={styles.container}>
       <MenuButtons
@@ -637,7 +651,7 @@ const CrudCylinders = () => {
           text="Buscar por Código"
         />
         <Table
-           title="Cilindros"
+          title="Cilindros"
           onClick={onClickTable}
           currentSelection={stateListAccounts.currentSelection}
           arrayTitles={stateListAccounts.arrayTitle}
