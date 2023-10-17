@@ -177,7 +177,6 @@ const CrudCylinders = () => {
           )[0].id,
           stateForm.own.text == "Si" ? 0 : 1
         );
-      
 
         setStateForm({
           ...stateForm,
