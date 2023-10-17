@@ -167,17 +167,7 @@ const CrudCylinders = () => {
   const onClickAction = () => {
     switch (menu.currentSelection) {
       case 0:
-        /*       insertCylinders(
-          stateForm.code.text,
-          listCapacity.filter(
-            (list: any) => list.name === stateForm.capacity.text
-          )[0].id,
-          listContent.filter(
-            (list: any) => list.name === stateForm.content.text
-          )[0].id,
-          stateForm.own.text == "Si" ? 0 : 1
-        ); */
-        console.log(
+        insertCylinders(
           stateForm.code.text,
           listCapacity.filter(
             (list: any) => list.name === stateForm.capacity.text
@@ -187,6 +177,7 @@ const CrudCylinders = () => {
           )[0].id,
           stateForm.own.text == "Si" ? 0 : 1
         );
+      
 
         setStateForm({
           ...stateForm,
