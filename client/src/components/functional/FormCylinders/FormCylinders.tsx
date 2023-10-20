@@ -112,7 +112,7 @@ const FormCylinders = () => {
       { name: "Código" },
       { name: "Contenido" },
       { name: "Capacidad" },
-      { name: "¿de ñubles?" },
+      { name: "¿de ñuble?" },
       { name: "nombre responsable" },
       { name: "Estado" },
     ],
@@ -126,7 +126,7 @@ const FormCylinders = () => {
       { name: "Código" },
       { name: "Contenido" },
       { name: "Capacidad" },
-      { name: "¿de ñubles?" },
+      { name: "¿de ñuble?" },
     ],
     arrayData: [],
   });

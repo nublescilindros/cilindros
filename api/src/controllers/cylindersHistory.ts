@@ -95,7 +95,7 @@ const createExcel = async (sheetLabel: string, data: any) => {
         "Fecha Entrega",
         "Fecha Recepción",
         "Días",
-        "¿De Ñubles?"
+        "¿De Ñuble?"
     ]], {
         origin: "A1",
     });

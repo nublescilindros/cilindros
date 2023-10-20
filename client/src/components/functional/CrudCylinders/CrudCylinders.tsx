@@ -65,8 +65,8 @@ const CrudCylinders = () => {
     arrayTitle: [
       { name: "Código" },
       { name: "Capacidad  " },
-      { name: "Contendio" },
-      { name: "¿de ñubles?" },
+      { name: "Contenido" },
+      { name: "¿de ñuble?" },
     ],
     arrayData: [],
   });
@@ -618,7 +618,7 @@ const CrudCylinders = () => {
           value={stateForm.own.text}
           onClick={changeInputs}
           name="own"
-          text="¿de ñubles?"
+          text="¿de ñuble?"
           arrayOption={[
             { id: 0, name: "Si" },
             { id: 1, name: "No" },

@@ -54,7 +54,7 @@ const CylinderHistory = () => {
         { name: "Fecha entrega" },
         { name: "Fecha recepción" },
         { name: "Dias" },
-        { name: "¿De Ñubles?" },
+        { name: "¿De Ñuble?" },
       ],
       arrayData: [],
     });

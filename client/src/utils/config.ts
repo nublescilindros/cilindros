@@ -1,3 +1,3 @@
 export const config: any = {
-  api: process.env.NEXT_PUBLIC_API,
+  api: 'http://localhost:5502'
 };
