@@ -408,7 +408,7 @@ const CrudCylinders = () => {
 
   useEffect(() => {
     if (
-      stateForm.code.text.length > 4 &&
+      stateForm.code.text.length > 1 &&
       stateForm.capacity.text.length > 1 &&
       stateForm.content.text.length > 1 &&
       stateForm.own.text.length > 1

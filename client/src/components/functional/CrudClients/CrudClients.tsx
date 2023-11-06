@@ -391,10 +391,10 @@ const CrudClients = () => {
 
   useEffect(() => {
     if ( 
-      stateForm.rutBusiness.text.length > 4 &&
+      stateForm.rutBusiness.text.length > 1 &&
       stateForm.nameBusiness.text.length > 1 &&
-      stateForm.nameManager.text.length > 2 &&
-      stateForm.addressBusiness.text.length > 4
+      stateForm.nameManager.text.length > 1 &&
+      stateForm.addressBusiness.text.length > 1
     ) {
       switch (menu.currentSelection) {
         case 0:
