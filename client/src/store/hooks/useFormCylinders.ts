@@ -6,13 +6,15 @@ const useFormCylinders = () => {
         typeError,
         error: formCylindersError,
         listCompanyCylindersCount,
-        listCylindersCompany
+        listCylindersCompany,
+        pdfStateGenerate
     } = formCylindersStore(
         (state) => ({
             error: state.error,
             typeError: state.typeError,
             listCompanyCylindersCount: state.listCompanyCylindersCount,
-            listCylindersCompany: state.listCylindersCompany
+            listCylindersCompany: state.listCylindersCompany,
+            pdfStateGenerate: state.pdfStateGenerate
         }),
         shallow
     );
@@ -21,7 +23,8 @@ const useFormCylinders = () => {
         getAllCompanyCylindersCount,
         getAllCylindersCompany,
         updateCylinderState,
-        updateCylinderRequestAndReception
+        updateCylinderRequestAndReception,
+        generatePdfCylinderCompany
     } = formCylindersStore();
 
     return {
@@ -29,10 +32,12 @@ const useFormCylinders = () => {
         formCylindersError,
         listCompanyCylindersCount,
         listCylindersCompany,
+        pdfStateGenerate,
         getAllCompanyCylindersCount,
         getAllCylindersCompany,
         updateCylinderState,
         updateCylinderRequestAndReception,
+        generatePdfCylinderCompany,
         setFormCylinders,
 
     };

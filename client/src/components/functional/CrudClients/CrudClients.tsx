@@ -60,6 +60,7 @@ const CrudClients = () => {
   const [menu, setmenu] = useState({
     currentSelection: 0,
     stateMsj: "",
+    stateMsjClients: "...",
     list: [{ name: "Agregar" }, { name: "Modificar" }, { name: "Eliminar" }],
   });
 
@@ -164,6 +165,8 @@ const CrudClients = () => {
       default:
         break;
     }
+    setmenu({ ...menu, stateMsjClients: current[1] });
+
     setListBusiness({ ...listBusiness, currentSelection: index });
   };
 
@@ -302,6 +305,7 @@ const CrudClients = () => {
         setmenu({
           ...menu,
           stateMsj: stateAlertMessages.clients.add.incomplete,
+          stateMsjClients: "...",
         });
         setStateForm({
           ...stateForm,
@@ -336,6 +340,7 @@ const CrudClients = () => {
         setmenu({
           ...menu,
           stateMsj: stateAlertMessages.clients.modify.selectUser,
+          stateMsjClients: "...",
         });
         setStateForm({
           ...stateForm,
@@ -354,6 +359,7 @@ const CrudClients = () => {
         setmenu({
           ...menu,
           stateMsj: stateAlertMessages.clients.delete.selectUser,
+          stateMsjClients: "...",
         });
         setStateForm({
           ...stateForm,
@@ -390,7 +396,7 @@ const CrudClients = () => {
   }, [menu.currentSelection]);
 
   useEffect(() => {
-    if ( 
+    if (
       stateForm.rutBusiness.text.length > 1 &&
       stateForm.nameBusiness.text.length > 1 &&
       stateForm.nameManager.text.length > 1 &&
@@ -608,8 +614,9 @@ const CrudClients = () => {
           width="12rem"
           text="Buscar razón social"
         />
+     
         <Table
-           title="Clientes"
+          title="Clientes"
           onClick={onClickTable}
           currentSelection={listBusiness.currentSelection}
           arrayTitles={listBusiness.arrayTitle}
@@ -619,6 +626,7 @@ const CrudClients = () => {
               stateForm.search.text.toLowerCase()
           )}
         />
+        <AlertMessages text={menu.stateMsjClients} />
       </div>
     </div>
   );

@@ -8,18 +8,19 @@ interface formCylindersState {
     typeError: number;
     listCompanyCylindersCount: any;
     listCylindersCompany: any;
+    pdfStateGenerate: boolean;
     error: boolean;
     setFormCylinders: (user: any) => void;
     getAllCompanyCylindersCount: () => void;
     getAllCylindersCompany: (rutBusiness: string) => void;
     updateCylinderState: (code: string, state: number) => void;
+    generatePdfCylinderCompany: (dataForm: any) => void;
     updateCylinderRequestAndReception: (
         rutBusiness: string,
         codeCylinders: string,
         rutAccounts: string,
         stateCylinders: number
     ) => void;
-
     reset: () => void;
     resetAll: () => void;
 }
@@ -30,6 +31,7 @@ const { setCylinders } = cylindersStore.getState();
 export const formCylindersStore = create<formCylindersState>((set, get) => ({
     listCompanyCylindersCount: [],
     listCylindersCompany: [],
+    pdfStateGenerate: false,
     error: false,
     typeError: 0,
     setFormCylinders: async (data: any) => {
@@ -178,7 +180,42 @@ export const formCylindersStore = create<formCylindersState>((set, get) => ({
             }
         }
     },
+    generatePdfCylinderCompany: async (dataForm: any) => {
+        if (uiStore.getState().token != null) {
+            try {
+                set((state) => ({
+                    ...state, pdfStateGenerate: false,
+                }));
+                setUi({ modal: { ...uiStore.getState().modal, text: "Cargando Pdf", state: true, type: 0 } })
 
+                const { data } = await apiInstance(uiStore.getState().token).
+                    apiAxios.post(`/formCylinders/generatePdfCylinderCompany`, dataForm);
+
+                if (data.errorToken != undefined && data.errorToken === true) {
+                    setUi({ errorToken: data.errorToken })
+                    resetModal()
+                    return
+                }
+
+                if (data.error) {
+                    set((state) => ({
+                        ...state, error: true, typeError: 0
+                    }));
+                    resetModal()
+                    return
+                }
+
+                set((state) => ({
+                    ...state, pdfStateGenerate: data.state,
+                }));
+
+                resetModal()
+            } catch (e) {
+                setUi({ errorRequest: true })
+            }
+        }
+
+    },
     reset: () =>
         set((state) => ({
             ...state,

@@ -57,6 +57,7 @@ const CrudCylinders = () => {
   const [menu, setmenu] = useState({
     currentSelection: 0,
     stateMsj: "",
+    stateMsjCylinders: "...",
     list: [{ name: "Agregar" }, { name: "Modificar" }, { name: "Eliminar" }],
   });
 
@@ -67,6 +68,8 @@ const CrudCylinders = () => {
       { name: "Capacidad  " },
       { name: "Contenido" },
       { name: "¿de ñuble?" },
+      { name: "Estado" },
+      { name: "Adquirido" },
     ],
     arrayData: [],
   });
@@ -162,7 +165,30 @@ const CrudCylinders = () => {
         break;
     }
     setStateListAccounts({ ...stateListAccounts, currentSelection: index });
+    setmenu({
+      ...menu,
+      stateMsjCylinders: current[5],
+    });
   };
+  /* 
+  useEffect(() => {
+    console.log(stateListAccounts.currentSelection);
+    if (stateListAccounts.currentSelection !== null) {
+      setmenu({
+        ...menu,
+        stateMsjCylinders: stateListAccounts.arrayData.filter(
+          (list: any) =>
+            list[0].toLowerCase().slice(0, stateForm.search.text.length) ==
+            stateForm.search.text.toLowerCase()
+        )[stateListAccounts.currentSelection][5],
+      });
+    } else {
+      setmenu({
+        ...menu,
+        stateMsjCylinders: "...",
+      });
+    }
+  }, [stateListAccounts.currentSelection]); */
 
   const onClickAction = () => {
     switch (menu.currentSelection) {
@@ -310,7 +336,9 @@ const CrudCylinders = () => {
         setmenu({
           ...menu,
           stateMsj: stateAlertMessages.clients.add.incomplete,
+          stateMsjCylinders: "...",
         });
+
         setStateForm({
           ...stateForm,
           code: {
@@ -344,6 +372,7 @@ const CrudCylinders = () => {
         setmenu({
           ...menu,
           stateMsj: stateAlertMessages.clients.modify.selectUser,
+          stateMsjCylinders: "...",
         });
         setStateForm({
           ...stateForm,
@@ -363,6 +392,7 @@ const CrudCylinders = () => {
         setmenu({
           ...menu,
           stateMsj: stateAlertMessages.clients.delete.selectUser,
+          stateMsjCylinders: "...",
         });
         setStateForm({
           ...stateForm,
@@ -524,14 +554,42 @@ const CrudCylinders = () => {
   ]);
 
   useEffect(() => {
+    console.log(listCylinders);
     setStateListAccounts({
       ...stateListAccounts,
-      arrayData: listCylinders.map((list: any) => [
-        list.code,
-        list.capacity,
-        list.content,
-        list.own === 0 ? "Si" : "No",
-      ]),
+      arrayData: listCylinders.map((list: any) => {
+        let nameState = "";
+        let adquiredState =
+          list.name_manager == null ? "No adqurido" : list.name_manager;
+        switch (list.stateCylinders) {
+          case 0:
+            nameState = "No disponible";
+            break;
+          case 1:
+            nameState = "Disponible";
+            break;
+          case 2:
+            nameState = "Pendiende";
+            break;
+          case 3:
+            nameState = "En uso";
+            break;
+          case 4:
+            nameState = "Retirando";
+            break;
+          default:
+            break;
+        }
+
+        return [
+          list.code,
+          list.capacity,
+          list.content,
+          list.own === 0 ? "Si" : "No",
+          nameState,
+          adquiredState,
+        ];
+      }),
     });
   }, [listCylinders]);
 
@@ -651,6 +709,7 @@ const CrudCylinders = () => {
               stateForm.search.text.toLowerCase()
           )}
         />
+        <AlertMessages text={menu.stateMsjCylinders} />
       </div>
     </div>
   );

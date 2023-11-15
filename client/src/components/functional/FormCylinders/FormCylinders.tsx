@@ -10,6 +10,7 @@ import ComboBox from "@/components/ui/ComboBox/ComboBox";
 import { useCylinders, useFormCylinders, useUi, useUser } from "@/store/hooks";
 import { stateAlertMessages, stateMessagesModal } from "@/utils/constant";
 import WindowAlert from "@/components/ui/WindowAlert/WindowAlert";
+import { config } from "@/utils/config";
 
 /* 
 0 vacio
@@ -33,10 +34,12 @@ const FormCylinders = () => {
   const {
     listCompanyCylindersCount,
     listCylindersCompany,
+    pdfStateGenerate,
     getAllCompanyCylindersCount,
     getAllCylindersCompany,
     updateCylinderState,
     updateCylinderRequestAndReception,
+    generatePdfCylinderCompany,
   } = useFormCylinders();
 
   const { listAccounts, getAllAccounts } = useUser();
@@ -89,6 +92,10 @@ const FormCylinders = () => {
     },
     buttonAction: {
       text: "",
+      disabled: true,
+    },
+    buttonPdf: {
+      text: "Exportar pdf",
       disabled: true,
     },
   });
@@ -244,7 +251,6 @@ const FormCylinders = () => {
   };
 
   const onClickTableCylindersCompanyCount = (data: any, index: number) => {
-
     if (data[3] > 0) {
       getAllCylindersCompany(data[1]);
     } else {
@@ -267,8 +273,6 @@ const FormCylinders = () => {
   };
 
   const onClickTableCylindersCompany = (data: any, index: number) => {
-
-
     if (data[5] === "En uso") {
       setStateCylindersCompany({
         ...stateCylindersCompany,
@@ -361,6 +365,34 @@ const FormCylinders = () => {
     }
   };
 
+  const onClickButtonPdf = () => {
+    generatePdfCylinderCompany({
+      company: stateListCompany.arrayData.filter((list: any) => {
+        let currentFilter = 0;
+        switch (stateFormCompany.filterCompany.text) {
+          case "Razón social":
+            currentFilter = 0;
+            break;
+          case "Rut":
+            currentFilter = 1;
+            break;
+          default:
+            break;
+        }
+        return (
+          list[currentFilter]
+            ?.toLowerCase()
+            .slice(0, stateFormCompany.searchCompany.text.length) ==
+          stateFormCompany.searchCompany.text.toLowerCase()
+        );
+      })[stateListCompany.currentSelection],
+      list: stateCylindersCompany.arrayData,
+    });
+
+    stateFormAssign.buttonPdf.disabled;
+   
+  };
+
   const TableAccounts = () => (
     <div className={estyles.containerPersonal}>
       <Table
@@ -446,6 +478,20 @@ const FormCylinders = () => {
   );
 
   useEffect(() => {
+    if (pdfStateGenerate === true) {
+      fetch(`${config.api}/files/pdf/infoPdf.pdf`)
+        .then((response) => response.blob())
+        .then((blob) => {
+          const link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.download = "infoPdf.pdf";
+          link.click();
+        })
+        .catch(console.error);
+    }
+  }, [pdfStateGenerate]);
+
+  useEffect(() => {
     getAllCylinders();
     getAllCapacity();
     getAllContent();
@@ -496,7 +542,6 @@ const FormCylinders = () => {
   }, [menu.currentSelection, listCylinders, listCompanyCylindersCount]);
 
   useEffect(() => {
-
     listCylindersCompany.length > 0
       ? setStateCylindersCompany({
           ...stateCylindersCompany,
@@ -566,9 +611,6 @@ const FormCylinders = () => {
           break;
       }
     } else {
-      /*       if (stateCylindersCompany.currentSelection != null) {
-        changeDisabledAssign(true, false, false, "Retirar");
-      } else { */
       changeDisabledAssign(true, true, true);
       setStateListAccounts({
         ...stateListAccounts,
@@ -607,6 +649,19 @@ const FormCylinders = () => {
     }
   }, [stateListAccounts.currentSelection]);
 
+  useEffect(() => {
+    if (stateListCompany.currentSelection !== null) {
+      setStateFormAssign({
+        ...stateFormAssign,
+        buttonPdf: { ...stateFormAssign.buttonPdf, disabled: false },
+      });
+    }else{
+      setStateFormAssign({
+        ...stateFormAssign,
+        buttonPdf: { ...stateFormAssign.buttonPdf, disabled: true },
+      });
+    }
+  }, [stateListCompany.currentSelection]);
 
   return (
     <div className={estyles.container}>
@@ -691,6 +746,11 @@ const FormCylinders = () => {
           disabled={stateFormAssign.buttonAction.disabled}
           onclick={onClickButtonAssign}
           text={stateFormAssign.buttonAction.text}
+        />
+        <Button
+          disabled={stateFormAssign.buttonPdf.disabled}
+          onclick={onClickButtonPdf}
+          text={stateFormAssign.buttonPdf.text}
         />
       </div>
 
