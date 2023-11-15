@@ -14,26 +14,32 @@ const _getAllCapacity = `
         `;
 
 const _getAllCylinders = `
-    SELECT
-        cylinders.code_cylinders as code,
-        content.name_content as content,
-        capacity.name_capacity as capacity,
-        cylinders.state_cylinders as stateCylinders,
-        own_cylinders as own,
-        acquired_by as acquiredBy,
-        rut_accounts as rut
-    FROM
-        cylinders
-    INNER JOIN
-        content
-    ON 
-        cylinders.id_content = content.id_content
-    INNER JOIN
-        capacity
-    ON 
-        cylinders.id_capacity = capacity.id_capacity
-        ORDER BY
-    cylinders.code_cylinders
+SELECT
+cylinders.code_cylinders as code,
+content.name_content as content,
+capacity.name_capacity as capacity,
+cylinders.state_cylinders as stateCylinders,
+own_cylinders as own,
+acquired_by as acquiredBy,
+rut_accounts as rut,
+clients.name_manager
+FROM
+cylinders
+INNER JOIN
+content
+ON 
+cylinders.id_content = content.id_content
+INNER JOIN
+capacity
+ON 
+cylinders.id_capacity = capacity.id_capacity
+LEFT JOIN
+clients
+ON 
+cylinders.acquired_by = clients.rut_business
+
+ORDER BY
+cylinders.code_cylinders
         ;
         `;
 

@@ -15,6 +15,14 @@ const createAppServer = () => {
 
     const routesConfig = () => {
         server.use("/files/excel", express.static(path.join(__dirname, "./../", "output")));
+        server.use(
+            "/files/pdf",
+            express.static(path.join(__dirname, "./../", "output"))
+        );
+        server.use(
+            "/files/img",
+            express.static(path.join(__dirname, "./../", "output"))
+        );
         server.use("/api/accounts", routes.accountsRouter);
         server.use("/api/cylinders", routes.cylindersRouter);
         server.use("/api/clients", routes.clientsRouter);
