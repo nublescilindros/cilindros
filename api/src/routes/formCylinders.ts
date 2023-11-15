@@ -15,7 +15,8 @@ formCylindersRouter.get("/getAllCompanyCylindersCount", checkAuth, getAllCompany
 formCylindersRouter.get("/getAllCylindersCompanyByRut/:rutBusiness", checkAuth, getAllCylindersCompanyByRut);
 formCylindersRouter.put("/updateCylinderState", checkAuth, updateCylinderState);
 formCylindersRouter.put("/updateCylinderRequestAndReception", checkAuth, updateCylinderRequestAndReception);
-formCylindersRouter.post("/generatePdfCylinderCompany", checkAuth, generatePdfCylinderCompany);
+/* formCylindersRouter.post("/generatePdfCylinderCompany", checkAuth, generatePdfCylinderCompany); */
+formCylindersRouter.post("/generatePdfCylinderCompany", checkAuth, getAllCompanyCylindersCount);
 
 
 export default formCylindersRouter;
