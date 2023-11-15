@@ -560,7 +560,7 @@ const CrudCylinders = () => {
       arrayData: listCylinders.map((list: any) => {
         let nameState = "";
         let adquiredState =
-          list.name_manager == null ? "No adqurido" : list.name_manager;
+          list.name_manager == null ? "No adquirido" : list.name_manager;
         switch (list.stateCylinders) {
           case 0:
             nameState = "No disponible";

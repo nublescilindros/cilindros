@@ -15,7 +15,7 @@ formCylindersRouter.get("/getAllCompanyCylindersCount", checkAuth, getAllCompany
 formCylindersRouter.get("/getAllCylindersCompanyByRut/:rutBusiness", checkAuth, getAllCylindersCompanyByRut);
 formCylindersRouter.put("/updateCylinderState", checkAuth, updateCylinderState);
 formCylindersRouter.put("/updateCylinderRequestAndReception", checkAuth, updateCylinderRequestAndReception);
-formCylindersRouter.post("/generatePdfCylinderCompany", checkRoleAuth(['admin']), generatePdfCylinderCompany);
+formCylindersRouter.post("/generatePdfCylinderCompany", checkAuth, generatePdfCylinderCompany);
 
 
 export default formCylindersRouter;

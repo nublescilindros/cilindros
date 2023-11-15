@@ -76,7 +76,7 @@ const updateCylinderRequestAndReception = async (req: any, res: any) => {
 const generatePdfCylinderCompany = async (req: any, res: any) => {
     const data = req.body;
 
-    console.log(data.company[0]);
+    console.log('generando pdf');
 
     let listCylinders = ''
 
