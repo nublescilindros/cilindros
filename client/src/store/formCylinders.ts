@@ -191,6 +191,10 @@ export const formCylindersStore = create<formCylindersState>((set, get) => ({
                 const { data } = await apiInstance(uiStore.getState().token).
                     apiAxios.post(`/formCylinders/generatePdfCylinderCompany`, dataForm);
 
+                console.log(data);
+
+
+
                 if (data.errorToken != undefined && data.errorToken === true) {
                     setUi({ errorToken: data.errorToken })
                     resetModal()
