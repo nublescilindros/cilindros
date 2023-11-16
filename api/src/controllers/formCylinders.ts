@@ -204,7 +204,7 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
 
         const browser = await puppeteer.launch({
             headless: 'new',
-            executablePath: '/ruta/a/chromium',
+            args: ['--no-sandbox'],
         });
         const page = await browser.newPage();
         await page.setContent(html);
