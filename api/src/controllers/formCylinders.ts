@@ -78,7 +78,7 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
 
     console.log('generando pdf');
 
-    /*  let listCylinders = ''
+    let listCylinders = ''
  
      data.list.forEach((list: any) => {
          listCylinders += `<tr>
@@ -218,7 +218,7 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
      };
      let statePdf: any = null;
  
-     statePdf = await pdfCreate(options, `./output/infoPdf.pdf`, html); */
+     statePdf = await pdfCreate(options, `./output/infoPdf.pdf`, html); 
 
     res.status(200).json({ state: true });
 };
