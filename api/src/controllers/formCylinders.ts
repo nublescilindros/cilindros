@@ -1,5 +1,5 @@
 import { pdfCreate /* , generateQRBase64  */ } from "../utils/pdf";
-
+import puppeteer from "puppeteer";
 import * as formCylinders from "../models/formCylinders";
 
 /* 
@@ -114,6 +114,7 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
            height:100%;
          }
          h1{
+            background-color: yellow;
              margin: 2rem 2rem 0 2rem;
              padding:.3rem 0 .3rem 0;
              border-radius: 0 0 .5rem 0;
@@ -122,7 +123,6 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
              width:13rem;
              text-align: center;
              border:solid .1rem blue;
-             background-color:yellow;
              }
           h2{
            margin: 2rem 2rem 0 2rem;
@@ -202,24 +202,16 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
        </body>
      </html>`;
 
-        const options = {
-            childProcessOptions: {
-                env: {
-                    OPENSSL_CONF: "/dev/null",
-                },
-            },
-            format: "Letter",
-            border: null,
-            margin: {
-                top: "2.5cm",
-                bottom: "2.5cm",
-                left: "2cm",
-                right: "2cm",
-            },
-        };
-        let statePdf: any = null;
+        const browser = await puppeteer.launch({
+            headless: 'new',
+        });
+        const page = await browser.newPage();
+        await page.setContent(html);
+        await page.pdf({ path: './output/infoPdf.pdf', format: 'A4' });
 
-        statePdf = await pdfCreate(options, `./output/infoPdf.pdf`, html);
+        await browser.close();
+
+        /* statePdf = await pdfCreate(options, `./output/infoPdf.pdf`, html); */
 
         res.status(200).json({ state: true });
     } catch (error) {
