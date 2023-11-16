@@ -477,7 +477,7 @@ const FormCylinders = () => {
     </div>
   );
 
-  /* useEffect(() => {
+  useEffect(() => {
     if (pdfStateGenerate === true) {
       fetch(`${config.api}/files/pdf/infoPdf.pdf`)
         .then((response) => response.blob())
@@ -489,7 +489,7 @@ const FormCylinders = () => {
         })
         .catch(console.error);
     }
-  }, [pdfStateGenerate]); */
+  }, [pdfStateGenerate]); 
 
   useEffect(() => {
     getAllCylinders();
