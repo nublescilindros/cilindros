@@ -74,14 +74,15 @@ const updateCylinderRequestAndReception = async (req: any, res: any) => {
 }
 
 const generatePdfCylinderCompany = async (req: any, res: any) => {
-    const data = req.body;
+    try {
+        const data = req.body;
 
-    console.log('generando pdf');
+        console.log('generando pdf');
 
-    let listCylinders = ''
- 
-     data.list.forEach((list: any) => {
-         listCylinders += `<tr>
+        let listCylinders = ''
+
+        data.list.forEach((list: any) => {
+            listCylinders += `<tr>
  <td class='tdTitle'>
  ${list[0]}
  </td>
@@ -98,9 +99,9 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
  ${list[5]}
   </td>
  </tr>`
-     });
- 
-     const html = `
+        });
+
+        const html = `
      <html>
        <head>
          <meta charset="utf-8">
@@ -200,27 +201,32 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
    
        </body>
      </html>`;
- 
-     const options = {
-         childProcessOptions: {
-             env: {
-                 OPENSSL_CONF: "/dev/null",
-             },
-         },
-         format: "Letter",
-         border: null,
-         margin: {
-             top: "2.5cm",
-             bottom: "2.5cm",
-             left: "2cm",
-             right: "2cm",
-         },
-     };
-     let statePdf: any = null;
- 
-     statePdf = await pdfCreate(options, `./output/infoPdf.pdf`, html); 
 
-    res.status(200).json({ state: true });
+        const options = {
+            childProcessOptions: {
+                env: {
+                    OPENSSL_CONF: "/dev/null",
+                },
+            },
+            format: "Letter",
+            border: null,
+            margin: {
+                top: "2.5cm",
+                bottom: "2.5cm",
+                left: "2cm",
+                right: "2cm",
+            },
+        };
+        let statePdf: any = null;
+
+        statePdf = await pdfCreate(options, `./output/infoPdf.pdf`, html);
+
+        res.status(200).json({ state: true });
+    } catch (error) {
+        console.log(error);
+    }
+
+
 };
 
 
