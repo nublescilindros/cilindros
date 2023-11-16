@@ -186,7 +186,7 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
     Capacidad
     </td>
     <td class='tdTitle'>
-    ¿de Ñubles?
+    ¿de Ñuble?
     </td>
     <td class='tdTitle'>
     Estado
