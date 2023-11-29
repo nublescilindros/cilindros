@@ -35,10 +35,11 @@ export const cylindersStore = create<userState>((set, get) => ({
     set((state) => ({ ...state, ...data }))
   },
   getAllCylinders: async () => {
+    console.log('cilindros antes de llamarlos antes del token');
     if (uiStore.getState().token != null) {
       try {
         console.log('cilindros antes de llamarlos');
-        
+
         setUi({ modal: { ...uiStore.getState().modal, text: "Cargando cilindros", state: true, type: 0 } })
 
 
