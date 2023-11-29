@@ -491,10 +491,10 @@ const FormCylinders = () => {
   }, [pdfStateGenerate]);
 
   useEffect(() => {
-    /*     getAllCylinders(); */
+    /* getAllCylinders(); */
     getAllCapacity();
     getAllContent();
-    /*     getAllCompanyCylindersCount(); */
+    /*   getAllCompanyCylindersCount(); */
     getAllAccounts();
   }, []);
 
@@ -539,8 +539,8 @@ const FormCylinders = () => {
       }
     } else {
       console.log('efecto cilindro, count')
-      getAllCylinders();
-      getAllCompanyCylindersCount();
+     getAllCylinders();
+      getAllCompanyCylindersCount(); 
     }
   }, [menu.currentSelection, listCylinders, listCompanyCylindersCount]);
 

@@ -37,8 +37,11 @@ export const cylindersStore = create<userState>((set, get) => ({
   getAllCylinders: async () => {
     if (uiStore.getState().token != null) {
       try {
-
+        console.log('cilindros antes de llamarlos');
+        
         setUi({ modal: { ...uiStore.getState().modal, text: "Cargando cilindros", state: true, type: 0 } })
+
+
 
         const { data } = await apiInstance(uiStore.getState().token).
           apiAxios.get(`/cylinders/getAllCylinders`, {
@@ -47,7 +50,7 @@ export const cylindersStore = create<userState>((set, get) => ({
             },
           });
 
-console.log('cilindros traidos',data)
+        console.log('cilindros traidos', data)
 
         if (data.errorToken != undefined && data.errorToken === true) {
           setUi({ errorToken: data.errorToken })
