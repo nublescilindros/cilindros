@@ -47,6 +47,8 @@ export const cylindersStore = create<userState>((set, get) => ({
             },
           });
 
+console.log('cilindros traidos',data)
+
         if (data.errorToken != undefined && data.errorToken === true) {
           setUi({ errorToken: data.errorToken })
           resetModal()
