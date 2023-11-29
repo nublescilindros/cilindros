@@ -390,7 +390,6 @@ const FormCylinders = () => {
     });
 
     stateFormAssign.buttonPdf.disabled;
-   
   };
 
   const TableAccounts = () => (
@@ -489,18 +488,15 @@ const FormCylinders = () => {
         })
         .catch(console.error);
     }
-  }, [pdfStateGenerate]); 
+  }, [pdfStateGenerate]);
 
   useEffect(() => {
-    getAllCylinders();
+    /*     getAllCylinders(); */
     getAllCapacity();
     getAllContent();
-    getAllCompanyCylindersCount();
+    /*     getAllCompanyCylindersCount(); */
     getAllAccounts();
   }, []);
-
-
-  
 
   useEffect(() => {
     if (listCylinders.length > 0 && listCompanyCylindersCount.length > 0) {
@@ -541,6 +537,9 @@ const FormCylinders = () => {
         default:
           break;
       }
+    } else {
+      getAllCylinders();
+      getAllCompanyCylindersCount();
     }
   }, [menu.currentSelection, listCylinders, listCompanyCylindersCount]);
 
@@ -658,7 +657,7 @@ const FormCylinders = () => {
         ...stateFormAssign,
         buttonPdf: { ...stateFormAssign.buttonPdf, disabled: false },
       });
-    }else{
+    } else {
       setStateFormAssign({
         ...stateFormAssign,
         buttonPdf: { ...stateFormAssign.buttonPdf, disabled: true },
