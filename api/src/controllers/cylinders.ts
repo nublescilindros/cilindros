@@ -32,6 +32,7 @@ const getAllContent = async (req: any, res: any) => {
 const getAllCylinders = async (req: any, res: any) => {
     try {
         const result = await cylinders.getAllCylinders();
+        console.log('cilindros api', result)
         res.status(200).json({
             ...result
         });
