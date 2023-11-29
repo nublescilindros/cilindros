@@ -44,7 +44,11 @@ export const formCylindersStore = create<formCylindersState>((set, get) => ({
                 setUi({ modal: { ...uiStore.getState().modal, text: "Cargando cilindros", state: true, type: 0 } })
 
                 const { data } = await apiInstance(uiStore.getState().token).
-                    apiAxios.get(`/formCylinders/getAllCompanyCylindersCount`);
+                    apiAxios.get(`/formCylinders/getAllCompanyCylindersCount`, {
+                        params: {
+                          timestamp: new Date().getTime(),
+                        },
+                      });
                 if (data.errorToken != undefined && data.errorToken === true) {
                     setUi({ errorToken: data.errorToken })
                     resetModal()

@@ -41,7 +41,11 @@ export const cylindersStore = create<userState>((set, get) => ({
         setUi({ modal: { ...uiStore.getState().modal, text: "Cargando cilindros", state: true, type: 0 } })
 
         const { data } = await apiInstance(uiStore.getState().token).
-          apiAxios.get(`/cylinders/getAllCylinders`);
+          apiAxios.get(`/cylinders/getAllCylinders`, {
+            params: {
+              timestamp: new Date().getTime(),
+            },
+          });
 
         if (data.errorToken != undefined && data.errorToken === true) {
           setUi({ errorToken: data.errorToken })
