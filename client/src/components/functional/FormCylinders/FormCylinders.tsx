@@ -538,6 +538,7 @@ const FormCylinders = () => {
           break;
       }
     } else {
+      console.log('efecto cilindro, count')
       getAllCylinders();
       getAllCompanyCylindersCount();
     }
