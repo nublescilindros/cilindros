@@ -88,7 +88,7 @@ export const userStore = create<userState>((set, get) => ({
       set((state) => ({
         ...state, user: { id: data.id, admin: data.admin, rut: data.rut }
       }));
-
+      setUi({login: true,});
       resetModal()
 
     } catch (e) {

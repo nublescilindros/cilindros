@@ -56,6 +56,7 @@ const RoutePublic = ({ children }: any) => {
 const RoutePrivate = ({ children }: any) => {
   const { setUi, token, resetUi, errorToken, errorRequest } = useUi();
   const { resetUser, verifyUser } = useUser();
+  const [stateLogin, setStateLogin] = useState(false);
 
   const router = useRouter();
 
@@ -71,7 +72,8 @@ const RoutePrivate = ({ children }: any) => {
   useEffect(() => {
     if (token != null && token != undefined) {
       verifyUser();
-      setUi({login: true,});
+      setUi({ login: true });
+      setStateLogin(true);
     }
   }, [token]);
 
@@ -116,7 +118,7 @@ const RoutePrivate = ({ children }: any) => {
   return (
     <>
       <NavMenu />
-      <div className={styles.container}>{children}</div>
+      <div className={styles.container}>{stateLogin ? children : <></>}</div>
     </>
   );
 };

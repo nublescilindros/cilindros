@@ -554,7 +554,7 @@ const CrudCylinders = () => {
   ]);
 
   useEffect(() => {
-    console.log(listCylinders);
+   
     setStateListAccounts({
       ...stateListAccounts,
       arrayData: listCylinders.map((list: any) => {
@@ -623,10 +623,6 @@ const CrudCylinders = () => {
   useEffect(() => {
     setUi({ titleNavMenu: "Cilindros" });
   }, []);
-
-  useEffect(() => {
-    console.log(listContent);
-  }, [listContent]);
 
   return (
     <div className={styles.container}>

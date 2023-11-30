@@ -195,7 +195,7 @@ export const formCylindersStore = create<formCylindersState>((set, get) => ({
                 const { data } = await apiInstance(uiStore.getState().token).
                     apiAxios.post(`/formCylinders/generatePdfCylinderCompany`, dataForm);
 
-                console.log(data);
+           
 
 
 
