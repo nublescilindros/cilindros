@@ -115,6 +115,5 @@ export {
     getAllCylindersCompanyByRut,
     updateCylinderState,
     updateCylinderRequestAndReception,
-    /* updateCylinderReception */
 };
 
