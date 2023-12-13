@@ -34,9 +34,18 @@ const _deleteClients = `
         WHERE 
             clients.rut_business = ?`;
 
+const _deleteClientsResetCylinders = `
+UPDATE 
+    cylinders SET acquired_by = '',
+    rut_accounts= '', 
+    state_cylinders= ''
+    WHERE
+    cylinders.acquired_by = ?;`
+
 export {
     _getAllClients,
     _insertClients,
     _updateClients,
     _deleteClients,
+    _deleteClientsResetCylinders
 };

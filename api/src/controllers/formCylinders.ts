@@ -1,7 +1,7 @@
 import { pdfCreate /* , generateQRBase64  */ } from "../utils/pdf";
 import puppeteer from "puppeteer";
 import * as formCylinders from "../models/formCylinders";
-
+import path from 'path';
 /* 
 0 vacio
 1 disponible
@@ -76,9 +76,10 @@ const updateCylinderRequestAndReception = async (req: any, res: any) => {
 const generatePdfCylinderCompany = async (req: any, res: any) => {
     try {
         const data = req.body;
-
+        const imagePath = path.join(__dirname, '../../output/LOGO-GASES-NUBLE.png');
+        const imagePathRelative = 'https://cilindros-production-31bc.up.railway.app/img/LOGO-GASES-NUBLE.png';
         console.log('generando pdf');
-
+        console.log(imagePath);
         let listCylinders = ''
 
         data.list.forEach((list: any) => {
@@ -114,7 +115,7 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
            height:100%;
          }
          h1{
-            background-color: yellow;
+            box-shadow: 0 0 0 1000px yellow inset;
              margin: 2rem 2rem 0 2rem;
              padding:.3rem 0 .3rem 0;
              border-radius: 0 0 .5rem 0;
@@ -140,7 +141,10 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
              border-bottom:solid .1rem black;
              width:60vw;
            }
-         
+           h4{
+            margin: 0rem 0rem 0 2rem;
+            font-size:1rem;
+          }
          table{
          margin: 1.5rem auto 2rem 2rem;
          font-size:1.3rem;
@@ -159,8 +163,8 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
             }
    
          img{
-           margin:0 0 0 10rem;
-           width:10rem;
+           margin:0 0 0 0rem;
+           width:15rem;
            height:15rem
             }
    
@@ -172,6 +176,7 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
        </style>
        <body>
        <h1>Gases Ñuble</h1>
+       <h4>Somos una gran compañia</h4>
          <h2>Empresa: ${data.company[0]}</h2>
          <h3>Información cilindros</h3>
    <table>
@@ -194,7 +199,7 @@ const generatePdfCylinderCompany = async (req: any, res: any) => {
  </tr>
  ${listCylinders}
          </table>
-   
+         <img src="${imagePathRelative}" alt="Descripción de la imagen">
        <div class='divContainerImg'>
  
         </div>

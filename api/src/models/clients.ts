@@ -3,8 +3,8 @@ import {
     _getAllClients,
     _insertClients,
     _updateClients,
-    _deleteClients
-
+    _deleteClients,
+    _deleteClientsResetCylinders
 } from "../queries/clients";
 
 const getAllClients: any = async () => {
@@ -79,10 +79,11 @@ const updateClients: any = async (
 const deleteClients: any = async (rutBusiness: string) => {
     try {
         const [rows0] = await db.query(_deleteClients, [rutBusiness]);
-        const [rows1] = await db.query(_getAllClients);
+        const [rows1] = await db.query(_deleteClientsResetCylinders, [rutBusiness]);
+        const [rows2] = await db.query(_getAllClients);
 
         return {
-            rows: rows1,
+            rows: rows2,
             error: false,
         };
     } catch (error) {
