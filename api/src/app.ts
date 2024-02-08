@@ -13,6 +13,8 @@ const createAppServer = () => {
         server.use(express.urlencoded({ extended: false }));
     };
 
+
+    ç
     const routesConfig = () => {
         server.use("/files/excel", express.static(path.join(__dirname, "./../", "output")));
         server.use(
