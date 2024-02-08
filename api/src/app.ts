@@ -14,7 +14,6 @@ const createAppServer = () => {
     };
 
 
-    ç
     const routesConfig = () => {
         server.use("/files/excel", express.static(path.join(__dirname, "./../", "output")));
         server.use(
